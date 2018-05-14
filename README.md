@@ -23,9 +23,9 @@ Events are the different "rooms" or "areas" that the player can navigate through
         }
     }
 ```
-```image```: Contains a link to the header image you want to use for that event
-```header```: Title of event, usually used for displaying the name of a room or area
-```description```: A little blurb that describes the room or area
-```actions```: A list of actions the user can take during this event (see Actions below)
+```image```: Contains a link to the header image you want to use for that event  
+```header```: Title of event, usually used for displaying the name of a room or area  
+```description```: A little blurb that describes the room or area  
+```actions```: A list of actions the user can take during this event (see Actions below)  
 
 ## Actions
