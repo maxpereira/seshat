@@ -12,7 +12,24 @@ window.onload = function() {
 
 // Load the story in the textarea into our engine
 function loadStory() {
-    storyRawJSON = document.getElementById("advTA").value;
-    s = JSON.parse(storyRawJSON);
-    alert("Found " + s.seshat.title + " by " + s.seshat.author);
+    // Set up variables
+    JSONtextarea = document.getElementById("advTA");
+    RawJSON = JSONtextarea.value;
+    
+    storyHeader = document.getElementById("storyHeader");
+    storyBlurb = document.getElementById("storyBlurb");
+
+    loadContainer = document.getElementById("loadAdventureContainer");
+    storyContainer = document.getElementById("storyEngineContainer");
+
+    // Load our story into an object
+    s = JSON.parse(RawJSON);
+
+    // Set our header and blurb
+    storyHeader.innerHTML = s.title;
+    storyBlurb.innerHTML = "by "+s.author;
+
+    // Hide load div and show story div
+    loadContainer.style.display = "none";
+    storyContainer.style.display = "block";
 }

@@ -7,9 +7,16 @@
     </head>
     <center>
     <body>
-        <h2>Load an adventure</h2>
-        <textarea id="advTA" rows="10" cols="50"></textarea><br><br>
-        <input id="loadButton" type="button" onclick="loadStory();" value="Load">
+        <div id="loadAdventureContainer">
+            <h1>Seshat Adventure Engine</h1>
+            <h2>Load an adventure</h2>
+            <textarea id="advTA" rows="10" cols="50"></textarea><br><br>
+            <input id="loadButton" type="button" onclick="loadStory();" value="Load">
+        </div>
+        <div id="storyEngineContainer" style="display: none;">
+            <h1 id="storyHeader">No Story Title Loaded</h1>
+            <p id="storyBlurb">No story blurb loaded.</p>
+        </div>
     </body>
     </center>
 </html>
