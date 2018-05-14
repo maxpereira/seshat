@@ -1,14 +1,15 @@
 let storytext = `
 {
-    "image": "https://goo.gl/Sgte2d",
+    "image": "https://goo.gl/qUBBma",
     "title": "My Sample Adventure",
     "author": "Demo Author",
     "description": "This is a demo story to highlight the Seshat Engine.",
     "events": {
         "0": {
             "type": "1",
+            "image": "https://goo.gl/QyR8oy",
             "header": "The Adventure Begins!",
-            "blurb": "You come upon an abandoned house with a locked front door.",
+            "description": "You come upon an abandoned house with a locked front door.",
             "actions": {
                 "0": {
                     "type": "1",
@@ -25,7 +26,7 @@ let storytext = `
         "1": {
             "type": "1",
             "header": "Looking around",
-            "blurb": "You find a window that's slightly ajar- but it's on the second floor.",
+            "description": "You find a window that's slightly ajar- but it's on the second floor.",
             "actions": {
                 "0": {
                     "type": "1",

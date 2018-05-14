@@ -10,23 +10,26 @@ window.onload = function() {
     document.getElementById("advTA").value = storytext;
 };
 
+var s; // our global story object
+
 // Load the story in the textarea into our engine
 function loadStory() {
     // Set up variables
     JSONtextarea = document.getElementById("advTA");
     RawJSON = JSONtextarea.value;
-
+    // Load our story into an object
+    s = JSON.parse(RawJSON);
     headerImage = document.getElementById("headerImage");
     
     introHeader = document.getElementById("introHeader");
     introAuthor = document.getElementById("introAuthor");
     introDesc = document.getElementById("introDesc");
 
+    storyHeader = document.getElementById("storyHeader");
+    storyDesc = document.getElementById("storyDesc");
+
     loadContainer = document.getElementById("loadAdventureContainer");
     introContainer = document.getElementById("introContainer");
-
-    // Load our story into an object
-    s = JSON.parse(RawJSON);
 
     // Set up our intro intersitial page
     headerImage.src = s.image;
@@ -39,6 +42,16 @@ function loadStory() {
     introContainer.style.display = "block";
 }
 
-function loadEvent() {
+var curE = 0; // global current event ID
 
+// When continue button is pressed on intro intersitial page
+// Start the story
+function startStory() {
+
+    introContainer.style.display = "none";
+    storyContainer.style.display = "block";
+
+    headerImage.src = s.events[curE].image;
+    storyHeader.innerHTML = s.events[curE].header;
+    storyDesc.innerHTML = s.events[curE].description;
 }

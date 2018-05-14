@@ -10,6 +10,10 @@ Max Pereira
     font-family: 'Montserrat', sans-serif;
 }
 
+#headerImage {
+    border-radius: 5px;
+}
+
 body {
     background-color: black;
     color: white;
@@ -24,6 +28,20 @@ body {
 #loadButton {
     border-radius: 5px;
     font-size: 16px;
-    background-color: mediumaquamarine;
+    background-color: darkcyan;
     color: white;
+}
+
+#startButton {
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: darkcyan;
+    color: white;    
+}
+
+#backButton {
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: darkred;
+    color: white;    
 }

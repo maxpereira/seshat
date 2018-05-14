@@ -15,9 +15,15 @@
             <input id="loadButton" type="button" onclick="loadStory();" value="Load">
         </div>
         <div id="introContainer" style="display: none;">
-            <h1 id="introHeader">No Story Title Loaded</h1>
-            <h3 id="introAuthor">No story author loaded.</h3>
-            <p id="introDesc">No story description loaded.</p>
+            <h1 id="introHeader">Empty Story Title</h1>
+            <h3 id="introAuthor">Empty Story Author</h3>
+            <p id="introDesc">Empty story description. If you're seeing this you've made a mistake in your storyfile.</p>
+            <input id="backButton" type="button" onclick="goBack();" value="Back">
+            <input id="startButton" type="button" onclick="startStory();" value="Continue">
+        </div>
+        <div id="storyContainer" style="display: none;">
+            <h1 id="storyHeader">Empty Event Title</h1>            
+            <p id="storyDesc">Empty event blurb. If you're seeing this you've made a mistake in your storyfile.</p>
         </div>
     </body>
     </center>
