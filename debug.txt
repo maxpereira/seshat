@@ -1,0 +1,44 @@
+let storytext = `
+{
+    "seshat": {
+        "title": "My Sample Adventure",
+        "author": "Demo Author",
+		"events": {
+			"0": {
+                "type": "1",
+                "header": "The Adventure Begins!",
+                "blurb": "You come upon an abandoned house with a locked front door.",
+                "actions": {
+                    "0": {
+                        "type": "1",
+                        "text": "Kick the door.",
+                        "meta": "It won't budge."
+                    },
+                    "1": {
+                        "type": "0",
+                        "text": "Look for another way in.",
+                        "meta": "1"
+                    }
+                }
+            },
+            "1": {
+                "type": "1",
+                "header": "Looking around",
+                "blurb": "You find a window that's slightly ajar- but it's on the second floor.",
+                "actions": {
+                    "0": {
+                        "type": "1",
+                        "text": "Force it open.",
+                        "meta": "It won't budge."
+                    },
+                    "1": {
+                        "type": "0",
+                        "text": "Look for another way in.",
+                        "meta": "1"
+                    }
+                }
+            }
+        }
+    }
+}
+`
