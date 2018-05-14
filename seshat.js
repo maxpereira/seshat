@@ -44,6 +44,7 @@ function loadStory() {
 }
 
 var curE = 0; // global current event ID
+var currentEvent;
 
 // When continue button is pressed on intro intersitial page
 // Start the story
@@ -78,10 +79,12 @@ function processEvent() {
     }
 }
 
+// Show quick response action message
 function quickResponse(num) {
-    alert("Quick Respond");
+    alert(currentEvent.actions[num].response);
 }
 
+// Warp to action warp
 function warp(num) {
     curE = num;
     processEvent();

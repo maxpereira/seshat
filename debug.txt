@@ -25,24 +25,47 @@ let storytext = `
         },
         "1": {
             "type": "1",
-            "image": "",
+            "image": "https://goo.gl/m6rXKs",
             "header": "Looking around",
             "description": "You find a window that's slightly ajar- but it's on the second floor.",
             "actions": {
                 "0": {
                     "text": "Pry it open.",
-                    "response": "It won't budge.",
+                    "response": "It's extremely hard to move. It probably hasn't been opened in years.",
                     "warp": ""
                 },
                 "1": {
                     "text": "Break the glass.",
                     "response": "",
-                    "warp": "1"
+                    "warp": "2"
                 },
                 "2": {
                     "text": "Walk back to the porch.",
                     "response": "",
                     "warp": "0"
+                }
+            }
+        },
+        "2": {
+            "type": "1",
+            "image": "",
+            "header": "Front Room",
+            "description": "You wrap your shirt around your hand and punch through the glass, shattering it easily. After entering, you arrive in a dusty dank ornate room. Based on the furniture it looks like nobody has been here for many years. Suddenly, a loud noise of breaking glass pierces the air.",
+            "actions": {
+                "0": {
+                    "text": "Climb the stairs to check it out.",
+                    "response": "It's extremely hard to move. It probably hasn't been opened in years.",
+                    "warp": ""
+                },
+                "1": {
+                    "text": "Go to the kitchen.",
+                    "response": "",
+                    "warp": "0"
+                },
+                "2": {
+                    "text": "Climb back out the window and get out.",
+                    "response": "",
+                    "warp": "1"
                 }
             }
         }
