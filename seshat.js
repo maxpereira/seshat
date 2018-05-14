@@ -61,6 +61,11 @@ function startStory() {
     // Load actions for specific event
     for (i = 0; i < Object.keys(currentEvent.actions).length; i++) { 
         alert(currentEvent.actions[i].text);
-        alert(currentEvent.actions[i].meta);
+        if (currentEvent.actions[i].response != null) {
+            alert(i+" is a quick respond event");
+        }
+        if (currentEvent.actions[i].warp != null) {
+            alert(i+" is a warp event");
+        }
     }
 }

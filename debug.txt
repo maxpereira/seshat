@@ -12,14 +12,12 @@ let storytext = `
             "description": "You come upon an abandoned house with a locked front door.",
             "actions": {
                 "0": {
-                    "type": "1",
                     "text": "Kick the door.",
-                    "meta": "It won't budge."
+                    "response": "It won't budge."
                 },
                 "1": {
-                    "type": "0",
                     "text": "Look for another way in.",
-                    "meta": "1"
+                    "warp": "1"
                 }
             }
         },
