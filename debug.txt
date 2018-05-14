@@ -1,7 +1,9 @@
 let storytext = `
 {
+    "image": "https://goo.gl/Sgte2d",
     "title": "My Sample Adventure",
     "author": "Demo Author",
+    "description": "This is a demo story to highlight the Seshat Engine.",
     "events": {
         "0": {
             "type": "1",

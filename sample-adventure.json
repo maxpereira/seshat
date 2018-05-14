@@ -4,6 +4,7 @@
     "events": {
         "0": {
             "type": "1",
+            "image": "https://goo.gl/Sgte2d",
             "header": "The Adventure Begins!",
             "blurb": "You come upon an abandoned house with a locked front door.",
             "actions": {

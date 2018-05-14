@@ -16,20 +16,27 @@ function loadStory() {
     JSONtextarea = document.getElementById("advTA");
     RawJSON = JSONtextarea.value;
     
-    storyHeader = document.getElementById("storyHeader");
-    storyBlurb = document.getElementById("storyBlurb");
+    introHeader = document.getElementById("introHeader");
+    introAuthor = document.getElementById("introAuthor");
+    introDesc = document.getElementById("introDesc");
 
     loadContainer = document.getElementById("loadAdventureContainer");
-    storyContainer = document.getElementById("storyEngineContainer");
+    introContainer = document.getElementById("introContainer");
 
     // Load our story into an object
     s = JSON.parse(RawJSON);
 
     // Set our header and blurb
-    storyHeader.innerHTML = s.title;
-    storyBlurb.innerHTML = "by "+s.author;
+    introImage.src = s.image;
+    introHeader.innerHTML = s.title;
+    introAuthor.innerHTML = "by "+s.author;
+    introDesc.innerHTML = s.description;
 
-    // Hide load div and show story div
+    // Hide load div and show intro div
     loadContainer.style.display = "none";
-    storyContainer.style.display = "block";
+    introContainer.style.display = "block";
+}
+
+function loadEvent() {
+
 }
