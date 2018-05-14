@@ -43,6 +43,7 @@ A Quick Response Action will be created if the ```response``` key has a value.
             "warp": ""
         }
     }
+```
 ```special```: not set\
 ```text```: option message to display\
 ```response```: message to display on click\
@@ -60,6 +61,7 @@ A Warp Action will be created if the ```warp``` key has a value.
             "warp": "2"
         }
     }
+```    
 ```special```: not set\
 ```text```: option message to display\
 ```response```: not set\
