@@ -32,13 +32,13 @@ function loadStory() {
     introContainer = document.getElementById("introContainer");
 
     // Set up our intro intersitial page
-    headerImage.src = s.image;
     introHeader.innerHTML = s.title;
     introAuthor.innerHTML = "by "+s.author;
     introDesc.innerHTML = s.description;
 
     // Hide load div and show intro div
     loadContainer.style.display = "none";
+    headerImage.src = s.image;
     introContainer.style.display = "block";
 }
 
@@ -47,11 +47,20 @@ var curE = 0; // global current event ID
 // When continue button is pressed on intro intersitial page
 // Start the story
 function startStory() {
+    curA = 0;
+    currentEvent = s.events[curE];
+    // Load event title and description
+    storyHeader.innerHTML = currentEvent.header;
+    storyDesc.innerHTML = currentEvent.description;
 
+    // Switch container views
     introContainer.style.display = "none";
+    headerImage.src = currentEvent.image;
     storyContainer.style.display = "block";
 
-    headerImage.src = s.events[curE].image;
-    storyHeader.innerHTML = s.events[curE].header;
-    storyDesc.innerHTML = s.events[curE].description;
+    // Load actions for specific event
+    for (i = 0; i < Object.keys(currentEvent.actions).length; i++) { 
+        alert(currentEvent.actions[i].text);
+        alert(currentEvent.actions[i].meta);
+    }
 }
