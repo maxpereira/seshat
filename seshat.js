@@ -70,7 +70,9 @@ function processEvent() {
     for (i = 0; i < Object.keys(currentEvent.actions).length; i++) { 
 
         // If double event
-        if (currentEvent.actions[i].response != "" && currentEvent.actions[i].warp != "") {
+        if (currentEvent.actions[i].special == "random") {
+            actionsContainer.innerHTML+=("<a href='#' onclick='randomEvent("+i+");'>"+currentEvent.actions[i].text+"</a><br>");
+        } else if (currentEvent.actions[i].response != "" && currentEvent.actions[i].warp != "") {
             actionsContainer.innerHTML+=("<a href='#' onclick='quickResponseWarp("+i+","+currentEvent.actions[i].warp+");'>"+currentEvent.actions[i].text+"</a><br>");
         } else if (currentEvent.actions[i].response != "") { // If quick respond event
             actionsContainer.innerHTML+=("<a href='#' onclick='quickResponse("+i+");'>"+currentEvent.actions[i].text+"</a><br>");
@@ -89,6 +91,21 @@ function quickResponseWarp(num) {
 // Show quick response action message
 function quickResponse(num) {
     alert(currentEvent.actions[num].response);
+}
+
+// Random event handler
+function randomEvent(num) {
+    successMsg = currentEvent.actions[num].rngSuccessMsg;
+    failMsg = currentEvent.actions[num].rngFailMsg;
+    thresh = currentEvent.actions[num].rngSuccessRate;
+    randomNumber = Math.floor(Math.random() * 101);
+    if (randomNumber <= thresh) {
+        alert(successMsg);
+        warp(currentEvent.actions[num].rngSuccess);
+    } else {
+        alert(failMsg);
+        warp(currentEvent.actions[num].rngFail);
+    }
 }
 
 // Warp to action warp

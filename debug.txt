@@ -30,16 +30,24 @@ let storytext = `
             "description": "You find a window that's slightly ajar- but it's on the second floor.",
             "actions": {
                 "0": {
+                    "special": "random",
                     "text": "Pry it open.",
-                    "response": "It's extremely hard to move. It probably hasn't been opened in years.",
-                    "warp": ""
+                    "response": "",
+                    "warp": "",
+                    "rngSuccessRate": "50",
+                    "rngSuccess": "2",
+                    "rngSuccessMsg": "It's extremely hard to move. It probably hasn't been opened in years. With a great burst of effort, you slide the window open.",
+                    "rngFail": "0",
+                    "rngFailMsg": "It's extremely hard to move. It probably hasn't been opened in years. Unfortunately it appears the wood has rotted to the point that this window won't be opening any time soon."
                 },
                 "1": {
+                    "special": "",                    
                     "text": "Break the glass.",
                     "response": "You wrap your shirt around your hand and punch through the glass, shattering it easily.",
                     "warp": "2"
                 },
                 "2": {
+                    "special": "",                    
                     "text": "Walk back to the porch.",
                     "response": "",
                     "warp": "0"
@@ -56,6 +64,35 @@ let storytext = `
                     "text": "Climb the stairs to check it out.",
                     "response": "You shamble towards the stairs, and climb them quickly.",
                     "warp": ""
+                },
+                "1": {
+                    "text": "Look around some more.",
+                    "response": "You notice an iron poker near the fireplace and grab it. Now that you can properly defend yourself, you go up the stairs.",
+                    "warp": ""
+                },
+                "2": {
+                    "text": "Climb back out the window and run away.",
+                    "response": "",
+                    "warp": "1"
+                }
+            }
+        },
+        "99": {
+            "type": "99",
+            "image": "https://goo.gl/7KaNXX",
+            "header": "TEST Room",
+            "description": "You shouldn't be here from just playing the game unless you're debugging.",
+            "actions": {
+                "0": {
+                    "special": "random",
+                    "text": "RNG OPTION TEST.",
+                    "response": "",
+                    "warp": "",
+                    "rngSuccessRate": "50",
+                    "rngSuccess": "99",
+                    "rngSuccessMsg": "RNG SUCCEEDED",
+                    "rngFail": "99",
+                    "rngFailMsg": "RNG FAILED."
                 },
                 "1": {
                     "text": "Look around some more.",
