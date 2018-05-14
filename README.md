@@ -43,8 +43,10 @@ A Quick Response Action will be created if the ```response``` key has a value.
             "warp": ""
         }
     }
-```
-```response```: message to display
+```special```: not set\
+```text```: option message to display\
+```response```: message to display on click\
+```warp```: not set\
 
 ### Warp
 Warp Actions are for when you want to move a player to another Event upon clicking an outcome. These can be used in conjunction with a Quick Response Action.\
@@ -53,10 +55,38 @@ A Warp Action will be created if the ```warp``` key has a value.
     "actions": {
         "0": {
             "special": "",     
-            "text": "Kick the door.",
-            "response": "It won't budge.",
-            "warp": ""
+            "text": "Go inside.",
+            "response": "",
+            "warp": "2"
         }
     }
+```special```: not set\
+```text```: option message to display\
+```response```: not set\
+```warp```: event ID to warp to\
+
+### Random
+Random Actions are a type of Special Event for when you want a user to have a customizable random chance of failing an outcome.
+```JSON
+    "actions": {
+        "0": {
+            "special": "random",
+            "text": "Pry it open.",
+            "response": "",
+            "warp": "",
+            "rngSuccessRate": "50",
+            "rngSuccess": "2",
+            "rngSuccessMsg": "It's extremely hard to move. It probably hasn't been opened in years. With a great burst of effort, you slide the window open.",
+            "rngFail": "0",
+            "rngFailMsg": "It's extremely hard to move. It probably hasn't been opened in years. Unfortunately it appears the wood has rotted to the point that this window won't be opening any time soon."
+        }
 ```
-```warp```: event ID to warp to
+```special```: must be set to "random"\
+```text```: option message to display\
+```response```: not set\
+```warp```: not set\
+```rngSuccessRate```: success rate in percent (out of 100)\
+```rngSuccess```: event ID to warp to on event success\
+```rngSuccessMsg```: message to display on event success\
+```rngFail```: event ID to warp to on event fail\
+```rngFailMsg```: message to display on event fail\
