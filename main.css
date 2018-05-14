@@ -1,0 +1,28 @@
+/*
+A Fairly Odd Choose Your Own Adventure Engine
+Max Pereira
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+#loadAdventureTextarea {
+    border-radius: 5px;
+    background-color: #666;
+    color: white;
+}
+
+#loadButton {
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: mediumaquamarine;
+    color: white;
+}
