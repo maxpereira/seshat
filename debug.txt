@@ -8,33 +8,41 @@ let storytext = `
         "0": {
             "type": "1",
             "image": "https://goo.gl/QyR8oy",
-            "header": "The Adventure Begins!",
+            "header": "The Porch",
             "description": "You come upon an abandoned house with a locked front door.",
             "actions": {
                 "0": {
                     "text": "Kick the door.",
-                    "response": "It won't budge."
+                    "response": "It won't budge.",
+                    "warp": ""
                 },
                 "1": {
                     "text": "Look for another way in.",
+                    "response": "",
                     "warp": "1"
                 }
             }
         },
         "1": {
             "type": "1",
+            "image": "",
             "header": "Looking around",
             "description": "You find a window that's slightly ajar- but it's on the second floor.",
             "actions": {
                 "0": {
-                    "type": "1",
-                    "text": "Force it open.",
-                    "meta": "It won't budge."
+                    "text": "Pry it open.",
+                    "response": "It won't budge.",
+                    "warp": ""
                 },
                 "1": {
-                    "type": "0",
-                    "text": "Look for another way in.",
-                    "meta": "1"
+                    "text": "Break the glass.",
+                    "response": "",
+                    "warp": "1"
+                },
+                "2": {
+                    "text": "Walk back to the porch.",
+                    "response": "",
+                    "warp": "0"
                 }
             }
         }

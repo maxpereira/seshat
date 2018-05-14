@@ -30,6 +30,7 @@ function loadStory() {
 
     loadContainer = document.getElementById("loadAdventureContainer");
     introContainer = document.getElementById("introContainer");
+    actionsContainer = document.getElementById("actionsContainer");
 
     // Set up our intro intersitial page
     introHeader.innerHTML = s.title;
@@ -46,7 +47,7 @@ var curE = 0; // global current event ID
 
 // When continue button is pressed on intro intersitial page
 // Start the story
-function startStory() {
+function processEvent() {
     curA = 0;
     currentEvent = s.events[curE];
     // Load event title and description
@@ -55,17 +56,33 @@ function startStory() {
 
     // Switch container views
     introContainer.style.display = "none";
-    headerImage.src = currentEvent.image;
+    if (currentEvent.image != "") {
+        headerImage.src = currentEvent.image;
+    }
     storyContainer.style.display = "block";
+
+    actionsContainer.innerHTML="";
 
     // Load actions for specific event
     for (i = 0; i < Object.keys(currentEvent.actions).length; i++) { 
-        alert(currentEvent.actions[i].text);
-        if (currentEvent.actions[i].response != null) {
-            alert(i+" is a quick respond event");
+
+        // If quick respond event
+        if (currentEvent.actions[i].response != "") {
+            actionsContainer.innerHTML+=("<a href='#' onclick='quickResponse("+i+");'>"+currentEvent.actions[i].text+"</a><br>");
         }
-        if (currentEvent.actions[i].warp != null) {
-            alert(i+" is a warp event");
+
+        // If warp event
+        if (currentEvent.actions[i].warp != "") {
+            actionsContainer.innerHTML+=("<a href='#' onclick='warp("+currentEvent.actions[i].warp+");'>"+currentEvent.actions[i].text+"</a><br>");
         }
     }
+}
+
+function quickResponse(num) {
+    alert("Quick Respond");
+}
+
+function warp(num) {
+    curE = num;
+    processEvent();
 }

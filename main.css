@@ -10,6 +10,22 @@ Max Pereira
     font-family: 'Montserrat', sans-serif;
 }
 
+a {
+    font-size: 18px;
+}
+
+a:link, a:visited {
+    color: cyan;
+}
+
+a:hover {
+    color: green;
+}
+
+a:active {
+    color: darkred;
+}
+
 #headerImage {
     border-radius: 5px;
 }
