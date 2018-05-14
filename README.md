@@ -47,7 +47,7 @@ A Quick Response Action will be created if the ```response``` key has a value.
 ```special```: not set\
 ```text```: option message to display\
 ```response```: message to display on click\
-```warp```: not set\
+```warp```: not set
 
 ### Warp
 Warp Actions are for when you want to move a player to another Event upon clicking an outcome. These can be used in conjunction with a Quick Response Action.\
@@ -65,7 +65,7 @@ A Warp Action will be created if the ```warp``` key has a value.
 ```special```: not set\
 ```text```: option message to display\
 ```response```: not set\
-```warp```: event ID to warp to\
+```warp```: event ID to warp to
 
 ### Random
 Random Actions are a type of Special Event for when you want a user to have a customizable random chance of failing an outcome.
@@ -91,4 +91,4 @@ Random Actions are a type of Special Event for when you want a user to have a cu
 ```rngSuccess```: event ID to warp to on event success\
 ```rngSuccessMsg```: message to display on event success\
 ```rngFail```: event ID to warp to on event fail\
-```rngFailMsg```: message to display on event fail\
+```rngFailMsg```: message to display on event fail
