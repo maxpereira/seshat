@@ -12,11 +12,13 @@ let storytext = `
             "description": "You come upon an abandoned house with a locked front door.",
             "actions": {
                 "0": {
+                    "special": "",     
                     "text": "Kick the door.",
                     "response": "It won't budge.",
                     "warp": ""
                 },
                 "1": {
+                    "special": "",                      
                     "text": "Look for another way in.",
                     "response": "",
                     "warp": "1"
@@ -61,16 +63,19 @@ let storytext = `
             "description": "After entering, you arrive in a dusty dank ornate room. Based on the furniture it looks like nobody has been here for many years. Suddenly, a loud noise of breaking glass pierces the air.",
             "actions": {
                 "0": {
+                    "special": "",
                     "text": "Climb the stairs to check it out.",
                     "response": "You shamble towards the stairs, and climb them quickly.",
                     "warp": ""
                 },
                 "1": {
+                    "special": "",
                     "text": "Look around some more.",
                     "response": "You notice an iron poker near the fireplace and grab it. Now that you can properly defend yourself, you go up the stairs.",
                     "warp": ""
                 },
                 "2": {
+                    "special": "",
                     "text": "Climb back out the window and run away.",
                     "response": "",
                     "warp": "1"
