@@ -15,6 +15,8 @@ function loadStory() {
     // Set up variables
     JSONtextarea = document.getElementById("advTA");
     RawJSON = JSONtextarea.value;
+
+    headerImage = document.getElementById("headerImage");
     
     introHeader = document.getElementById("introHeader");
     introAuthor = document.getElementById("introAuthor");
@@ -26,8 +28,8 @@ function loadStory() {
     // Load our story into an object
     s = JSON.parse(RawJSON);
 
-    // Set our header and blurb
-    introImage.src = s.image;
+    // Set up our intro intersitial page
+    headerImage.src = s.image;
     introHeader.innerHTML = s.title;
     introAuthor.innerHTML = "by "+s.author;
     introDesc.innerHTML = s.description;
