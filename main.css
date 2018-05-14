@@ -1,5 +1,6 @@
 /*
-A Fairly Odd Choose Your Own Adventure Engine
+Seshat Choose Your Own Adventure Engine
+main.css | Main Stylesheet
 Max Pereira
 */
 
@@ -14,7 +15,7 @@ body {
     color: white;
 }
 
-#loadAdventureTextarea {
+#advTA {
     border-radius: 5px;
     background-color: #666;
     color: white;
