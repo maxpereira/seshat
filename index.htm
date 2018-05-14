@@ -7,24 +7,26 @@
     </head>
     <center>
     <body>
-        <img id="headerImage" src="https://goo.gl/XehA7q" height="200" width="400">
-        <div id="loadAdventureContainer">
-            <h1>Seshat Adventure Engine</h1>
-            <h2>Load an adventure</h2>
-            <textarea id="advTA" rows="10" cols="50"></textarea><br><br>
-            <input id="loadButton" type="button" onclick="loadStory();" value="Load">
-        </div>
-        <div id="introContainer" style="display: none;">
-            <h1 id="introHeader">Empty Story Title</h1>
-            <h3 id="introAuthor">Empty Story Author</h3>
-            <p id="introDesc">Empty story description. If you're seeing this you've made a mistake in your storyfile.</p>
-            <input id="backButton" type="button" onclick="goBack();" value="Back">
-            <input id="startButton" type="button" onclick="processEvent();" value="Continue">
-        </div>
-        <div id="storyContainer" style="display: none;">
-            <h1 id="storyHeader">Empty Event Title</h1>            
-            <p id="storyDesc">Empty event blurb. If you're seeing this you've made a mistake in your storyfile.</p>
-            <p id="actionsContainer">No actions defined for this event.</p>
+        <div id="parentContainer">
+            <img id="headerImage" src="https://goo.gl/XehA7q" height="200" width="400">
+            <div id="loadAdventureContainer">
+                <h1>Seshat Adventure Engine</h1>
+                <h2>Load an adventure</h2>
+                <textarea id="advTA" rows="10" cols="50"></textarea><br><br>
+                <input id="loadButton" type="button" onclick="loadStory();" value="Load">
+            </div>
+            <div id="introContainer" style="display: none;">
+                <h1 id="introHeader">Empty Story Title</h1>
+                <h3 id="introAuthor">Empty Story Author</h3>
+                <p id="introDesc">Empty story description. If you're seeing this you've made a mistake in your storyfile.</p>
+                <input id="backButton" type="button" onclick="goBack();" value="Back">
+                <input id="startButton" type="button" onclick="processEvent();" value="Continue">
+            </div>
+            <div id="storyContainer" style="display: none;">
+                <h1 id="storyHeader">Empty Event Title</h1>            
+                <p id="storyDesc">Empty event blurb. If you're seeing this you've made a mistake in your storyfile.</p>
+                <p id="actionsContainer">No actions defined for this event.</p>
+            </div>
         </div>
     </body>
     </center>

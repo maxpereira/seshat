@@ -36,7 +36,7 @@ let storytext = `
                 },
                 "1": {
                     "text": "Break the glass.",
-                    "response": "",
+                    "response": "You wrap your shirt around your hand and punch through the glass, shattering it easily.",
                     "warp": "2"
                 },
                 "2": {
@@ -50,25 +50,25 @@ let storytext = `
             "type": "1",
             "image": "",
             "header": "Front Room",
-            "description": "You wrap your shirt around your hand and punch through the glass, shattering it easily. After entering, you arrive in a dusty dank ornate room. Based on the furniture it looks like nobody has been here for many years. Suddenly, a loud noise of breaking glass pierces the air.",
+            "description": "After entering, you arrive in a dusty dank ornate room. Based on the furniture it looks like nobody has been here for many years. Suddenly, a loud noise of breaking glass pierces the air.",
             "actions": {
                 "0": {
                     "text": "Climb the stairs to check it out.",
-                    "response": "It's extremely hard to move. It probably hasn't been opened in years.",
+                    "response": "You shamble towards the stairs, and climb them quickly.",
                     "warp": ""
                 },
                 "1": {
-                    "text": "Go to the kitchen.",
-                    "response": "",
-                    "warp": "0"
+                    "text": "Look around some more.",
+                    "response": "You notice an iron poker near the fireplace and grab it. Now that you can properly defend yourself, you go up the stairs.",
+                    "warp": ""
                 },
                 "2": {
-                    "text": "Climb back out the window and get out.",
+                    "text": "Climb back out the window and run away.",
                     "response": "",
                     "warp": "1"
                 }
             }
         }
     }
-    }
+}
 `

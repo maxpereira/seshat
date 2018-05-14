@@ -30,6 +30,10 @@ a:active {
     border-radius: 5px;
 }
 
+#parentContainer {
+    width: 50%;
+}
+
 body {
     background-color: black;
     color: white;

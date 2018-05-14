@@ -59,6 +59,8 @@ function processEvent() {
     introContainer.style.display = "none";
     if (currentEvent.image != "") {
         headerImage.src = currentEvent.image;
+    } else {
+        headerImage.src = s.image;
     }
     storyContainer.style.display = "block";
 
@@ -67,16 +69,21 @@ function processEvent() {
     // Load actions for specific event
     for (i = 0; i < Object.keys(currentEvent.actions).length; i++) { 
 
-        // If quick respond event
-        if (currentEvent.actions[i].response != "") {
+        // If double event
+        if (currentEvent.actions[i].response != "" && currentEvent.actions[i].warp != "") {
+            actionsContainer.innerHTML+=("<a href='#' onclick='quickResponseWarp("+i+","+currentEvent.actions[i].warp+");'>"+currentEvent.actions[i].text+"</a><br>");
+        } else if (currentEvent.actions[i].response != "") { // If quick respond event
             actionsContainer.innerHTML+=("<a href='#' onclick='quickResponse("+i+");'>"+currentEvent.actions[i].text+"</a><br>");
-        }
-
-        // If warp event
-        if (currentEvent.actions[i].warp != "") {
+        } else if (currentEvent.actions[i].warp != "") { // If warp event
             actionsContainer.innerHTML+=("<a href='#' onclick='warp("+currentEvent.actions[i].warp+");'>"+currentEvent.actions[i].text+"</a><br>");
         }
     }
+}
+
+// Handle double events
+function quickResponseWarp(num) {
+    quickResponse(num);
+    warp(currentEvent.actions[num].warp);
 }
 
 // Show quick response action message
