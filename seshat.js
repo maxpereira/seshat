@@ -71,9 +71,9 @@ function processEvent() {
     for (curA = 0; curA < Object.keys(currentEvent.actions).length; curA++) { 
         currentAction = currentEvent.actions[curA];
         if (currentAction.special == "random") { // If special random event
-            actionsContainer.innerHTML+=("<a href='#' onclick='randomEvent("+curA+");'>"+currentAction.text+"</a><br>");
+            actionsContainer.innerHTML+=("<a href='#' onclick='randomAction("+curA+");'>"+currentAction.text+"</a><br>");
         } else if (currentAction.special == "puzzle") {
-            actionsContainer.innerHTML+=("<a href='#' onclick='puzzleEvent("+curA+");'>"+currentAction.text+"</a><br>");
+            actionsContainer.innerHTML+=("<a href='#' onclick='puzzleAction("+curA+");'>"+currentAction.text+"</a><br>");
         } else if (currentAction.response != "" && currentAction.warp != "") { // If double event
             actionsContainer.innerHTML+=("<a href='#' onclick='quickResponseWarp("+curA+","+currentAction.warp+");'>"+currentAction.text+"</a><br>");
         } else if (currentAction.response != "") { // If quick respond event
@@ -84,19 +84,19 @@ function processEvent() {
     }
 }
 
-// Handle double events
+// Handler for QR + warp events
 function quickResponseWarp(num) {
     quickResponse(num);
     warp(currentEvent.actions[num].warp);
 }
 
-// Show quick response action message
+// Handler for quick response actions
 function quickResponse(num) {
     alert(currentEvent.actions[num].response);
 }
 
-// Random event handler
-function randomEvent(num) {
+// Handler for random actions
+function randomAction(num) {
     currentAction = currentEvent.actions[num];
     successMsg = currentAction.successMsg;
     failMsg = currentAction.failMsg;
@@ -111,9 +111,10 @@ function randomEvent(num) {
     }
 }
 
-function puzzleEvent(num) {
+// Handler for puzzle actions
+function puzzleAction(num) {
     currentAction = currentEvent.actions[num];
-    var puzzlePrompt = prompt(currentAction.response,"Enter your answer...");
+    var puzzlePrompt = prompt(currentAction.response,"");
     if (puzzlePrompt == currentAction.meta) {
         alert(currentAction.successMsg);
         warp(currentAction.warpSuccess);
@@ -123,7 +124,7 @@ function puzzleEvent(num) {
     }
 }
 
-// Warp to action warp
+// helper function for warp events
 function warp(num) {
     curE = num;
     processEvent();

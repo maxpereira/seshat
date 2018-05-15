@@ -24,14 +24,20 @@ let storytext = `
                     "warp": "1"
                 },
                 "2": {
+                    "special": "",                      
+                    "text": "debug warp",
+                    "response": "",
+                    "warp": "99"
+                },
+                "3": {
                     "special": "puzzle",                      
-                    "text": "Solve the puzzle.",
-                    "response": "What is the password? This should be a clever puzzle or riddle.",
-                    "meta": "testpass",
-                    "warpSuccess": "99",
-                    "successMsg": "Success",
-                    "warpFail": "2",
-                    "failMsg": "fail"
+                    "text": "Answer the puzzle",
+                    "response": "What goes up when the rain comes down? (all lowercase, one word)",
+                    "meta": "umbrella",
+                    "warpSuccess": "3",
+                    "successMsg": "You got it. You pull out your umbrella and walk out into the rain.",
+                    "warpFail": "5",
+                    "failMsg": "Not exactly. You can't go out into the rain without one of these."
                 }
             }
         },
@@ -100,14 +106,14 @@ let storytext = `
             "actions": {
                 "0": {
                     "special": "random",
-                    "text": "RNG OPTION TEST.",
+                    "text": "RANDOM ACTION.",
                     "response": "",
                     "warp": "",
-                    "rngSuccessRate": "50",
-                    "rngSuccess": "99",
-                    "rngSuccessMsg": "RNG SUCCEEDED",
-                    "rngFail": "99",
-                    "rngFailMsg": "RNG FAILED."
+                    "meta": "50",
+                    "warpSuccess": "99",
+                    "successMsg": "RNG SUCCEEDED",
+                    "warpFail": "99",
+                    "failMsg": "RNG FAILED."
                 },
                 "1": {
                     "text": "room 0 (beginning)",
@@ -123,6 +129,16 @@ let storytext = `
                     "text": "room 2",
                     "response": "",
                     "warp": "2"
+                },
+                "4": {
+                    "special": "puzzle",                      
+                    "text": "PUZZLE ACTION.",
+                    "response": "Answer is testpass.",
+                    "meta": "testpass",
+                    "warpSuccess": "99",
+                    "successMsg": "Success",
+                    "warpFail": "99",
+                    "failMsg": "Fail"
                 }
             }
         }

@@ -101,8 +101,8 @@ Puzzle Actions are a type of Special Event for when you want a user to have to e
     "actions": {
         "0": {
             "special": "puzzle",                      
-            "text": "What goes up when the rain comes down? (all lowercase, one word)",
-            "response": "What is the password? This should be a clever puzzle or riddle.",
+            "text": "Solve the puzzle.",
+            "response": "What goes up when the rain comes down? (all lowercase, one word).",
             "meta": "umbrella",
             "warpSuccess": "3",
             "successMsg": "You got it. You pull out your umbrella and walk out into the rain.",
