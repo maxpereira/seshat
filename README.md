@@ -1,7 +1,9 @@
-# What is Seshat?
-Seshat is a Text Adventure Engine written in vanilla JavaScript. It takes a JSON storyfile created by the user and allows them to play it in a classic "choose your own adventure" style.
+![Seshat Adventure Engine](https://i.imgur.com/KLpd2I2.png)
 
-# Storyfile Format
+# Seshat Adventure Engine
+The Seshat Adventure Engine is a text adventure engine written in vanilla JavaScript. It reads a JSON "storyfile" and allows you to play it in a classic "choose your own adventure" style.
+
+## Storyfile Format
 Storyfiles follow the JSON (JavaScript Object Notation) format. The data structure for the Storyfiles is constantly changing during development, so this documentation may be out of date.
 
 ## Events
