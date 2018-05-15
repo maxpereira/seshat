@@ -22,6 +22,16 @@ let storytext = `
                     "text": "Look for another way in.",
                     "response": "",
                     "warp": "1"
+                },
+                "2": {
+                    "special": "puzzle",                      
+                    "text": "Solve the puzzle.",
+                    "response": "What is the password? This should be a clever puzzle or riddle.",
+                    "meta": "testpass",
+                    "warpSuccess": "99",
+                    "successMsg": "Success",
+                    "warpFail": "2",
+                    "failMsg": "fail"
                 }
             }
         },
@@ -36,11 +46,11 @@ let storytext = `
                     "text": "Pry it open.",
                     "response": "",
                     "warp": "",
-                    "rngSuccessRate": "50",
-                    "rngSuccess": "2",
-                    "rngSuccessMsg": "It's extremely hard to move. It probably hasn't been opened in years. With a great burst of effort, you slide the window open.",
-                    "rngFail": "0",
-                    "rngFailMsg": "It's extremely hard to move. It probably hasn't been opened in years. Unfortunately it appears the wood has rotted to the point that this window won't be opening any time soon."
+                    "meta": "50",
+                    "warpSuccess": "2",
+                    "successMsg": "It's extremely hard to move. It probably hasn't been opened in years. With a great burst of effort, you slide the window open.",
+                    "warpFail": "0",
+                    "failMsg": "It's extremely hard to move. It probably hasn't been opened in years. Unfortunately it appears the wood has rotted to the point that this window won't be opening any time soon."
                 },
                 "1": {
                     "special": "",                    
@@ -100,14 +110,19 @@ let storytext = `
                     "rngFailMsg": "RNG FAILED."
                 },
                 "1": {
-                    "text": "Look around some more.",
-                    "response": "You notice an iron poker near the fireplace and grab it. Now that you can properly defend yourself, you go up the stairs.",
-                    "warp": ""
+                    "text": "room 0 (beginning)",
+                    "response": "",
+                    "warp": "0"
                 },
                 "2": {
-                    "text": "Climb back out the window and run away.",
+                    "text": "room 1",
                     "response": "",
                     "warp": "1"
+                },
+                "3": {
+                    "text": "room 2",
+                    "response": "",
+                    "warp": "2"
                 }
             }
         }

@@ -19,8 +19,9 @@ function loadStory() {
     RawJSON = JSONtextarea.value;
     // Load our story into an object
     s = JSON.parse(RawJSON);
+
+    // Create some variables that we can manipulate
     headerImage = document.getElementById("headerImage");
-    
     introHeader = document.getElementById("introHeader");
     introAuthor = document.getElementById("introAuthor");
     introDesc = document.getElementById("introDesc");
@@ -44,18 +45,17 @@ function loadStory() {
 }
 
 var curE = 0; // global current event ID
-var currentEvent;
+var currentEvent; // JSON object of the current event
 
-// When continue button is pressed on intro intersitial page
-// Start the story
+// Render the page for the current event
 function processEvent() {
-    curA = 0;
     currentEvent = s.events[curE];
-    // Load event title and description
+    
+    // Render event title and description
     storyHeader.innerHTML = currentEvent.header;
     storyDesc.innerHTML = currentEvent.description;
 
-    // Switch container views
+    // Switch container view to event container
     introContainer.style.display = "none";
     if (currentEvent.image != "") {
         headerImage.src = currentEvent.image;
@@ -64,20 +64,22 @@ function processEvent() {
     }
     storyContainer.style.display = "block";
 
+    // Clear the actions container before rendering actions
     actionsContainer.innerHTML="";
 
-    // Load actions for specific event
-    for (i = 0; i < Object.keys(currentEvent.actions).length; i++) { 
-
-        // If double event
-        if (currentEvent.actions[i].special == "random") {
-            actionsContainer.innerHTML+=("<a href='#' onclick='randomEvent("+i+");'>"+currentEvent.actions[i].text+"</a><br>");
-        } else if (currentEvent.actions[i].response != "" && currentEvent.actions[i].warp != "") {
-            actionsContainer.innerHTML+=("<a href='#' onclick='quickResponseWarp("+i+","+currentEvent.actions[i].warp+");'>"+currentEvent.actions[i].text+"</a><br>");
-        } else if (currentEvent.actions[i].response != "") { // If quick respond event
-            actionsContainer.innerHTML+=("<a href='#' onclick='quickResponse("+i+");'>"+currentEvent.actions[i].text+"</a><br>");
-        } else if (currentEvent.actions[i].warp != "") { // If warp event
-            actionsContainer.innerHTML+=("<a href='#' onclick='warp("+currentEvent.actions[i].warp+");'>"+currentEvent.actions[i].text+"</a><br>");
+    // Render actions onto page
+    for (curA = 0; curA < Object.keys(currentEvent.actions).length; curA++) { 
+        currentAction = currentEvent.actions[curA];
+        if (currentAction.special == "random") { // If special random event
+            actionsContainer.innerHTML+=("<a href='#' onclick='randomEvent("+curA+");'>"+currentAction.text+"</a><br>");
+        } else if (currentAction.special == "puzzle") {
+            actionsContainer.innerHTML+=("<a href='#' onclick='puzzleEvent("+curA+");'>"+currentAction.text+"</a><br>");
+        } else if (currentAction.response != "" && currentAction.warp != "") { // If double event
+            actionsContainer.innerHTML+=("<a href='#' onclick='quickResponseWarp("+curA+","+currentAction.warp+");'>"+currentAction.text+"</a><br>");
+        } else if (currentAction.response != "") { // If quick respond event
+            actionsContainer.innerHTML+=("<a href='#' onclick='quickResponse("+curA+");'>"+currentAction.text+"</a><br>");
+        } else if (currentAction.warp != "") { // If warp event
+            actionsContainer.innerHTML+=("<a href='#' onclick='warp("+currentAction.warp+");'>"+currentAction.text+"</a><br>");
         }
     }
 }
@@ -95,16 +97,29 @@ function quickResponse(num) {
 
 // Random event handler
 function randomEvent(num) {
-    successMsg = currentEvent.actions[num].rngSuccessMsg;
-    failMsg = currentEvent.actions[num].rngFailMsg;
-    thresh = currentEvent.actions[num].rngSuccessRate;
+    currentAction = currentEvent.actions[num];
+    successMsg = currentAction.successMsg;
+    failMsg = currentAction.failMsg;
+    thresh = currentAction.rngSuccessRate;
     randomNumber = Math.floor(Math.random() * 101);
     if (randomNumber <= thresh) {
         alert(successMsg);
-        warp(currentEvent.actions[num].rngSuccess);
+        warp(currentAction.warpSuccess);
     } else {
         alert(failMsg);
-        warp(currentEvent.actions[num].rngFail);
+        warp(currentAction.warpFail);
+    }
+}
+
+function puzzleEvent(num) {
+    currentAction = currentEvent.actions[num];
+    var puzzlePrompt = prompt(currentAction.response,"Enter your answer...");
+    if (puzzlePrompt == currentAction.meta) {
+        alert(currentAction.successMsg);
+        warp(currentAction.warpSuccess);
+    } else {
+        alert(currentAction.failMsg);
+        warp(currentAction.warpFail);
     }
 }
 

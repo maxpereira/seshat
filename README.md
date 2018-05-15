@@ -78,19 +78,44 @@ Random Actions are a type of Special Event for when you want a user to have a cu
             "text": "Pry it open.",
             "response": "",
             "warp": "",
-            "rngSuccessRate": "50",
-            "rngSuccess": "2",
-            "rngSuccessMsg": "It's extremely hard to move. It probably hasn't been opened in years. With a great burst of effort, you slide the window open.",
-            "rngFail": "0",
-            "rngFailMsg": "It's extremely hard to move. It probably hasn't been opened in years. Unfortunately it appears the wood has rotted to the point that this window won't be opening any time soon."
+            "meta": "50",
+            "warpSuccess": "2",
+            "successMsg": "It's extremely hard to move. It probably hasn't been opened in years. With a great burst of effort, you slide the window open.",
+            "warpFail": "0",
+            "failMsg": "It's extremely hard to move. It probably hasn't been opened in years. Unfortunately it appears the wood has rotted to the point that this window won't be opening any time soon."
         }
 ```
 ```special```: must be set to "random"\
 ```text```: option message to display\
 ```response```: not set\
 ```warp```: not set\
-```rngSuccessRate```: success rate in percent (out of 100)\
-```rngSuccess```: event ID to warp to on event success\
-```rngSuccessMsg```: message to display on event success\
-```rngFail```: event ID to warp to on event fail\
-```rngFailMsg```: message to display on event fail
+```meta```: success rate in percent (out of 100)\
+```warpSuccess```: event ID to warp to on event success\
+```successMsg```: message to display on event success\
+```warpFail```: event ID to warp to on event fail\
+```failMsg```: message to display on event fail
+
+### Puzzle
+Puzzle Actions are a type of Special Event for when you want a user to have to enter a password or puzzle answer to continue.
+```JSON
+    "actions": {
+        "0": {
+            "special": "puzzle",                      
+            "text": "What goes up when the rain comes down? (all lowercase, one word)",
+            "response": "What is the password? This should be a clever puzzle or riddle.",
+            "meta": "umbrella",
+            "warpSuccess": "3",
+            "successMsg": "You got it. You pull out your umbrella and walk out into the rain.",
+            "warpFail": "5",
+            "failMsg": "Not exactly. You can't go out into the rain without one of these."
+        }
+```
+```special```: must be set to "puzzle"\
+```text```: option message to display\
+```response```: puzzle or riddle for player to answer (shows in prompt)\
+```warp```: not set\
+```meta```: answer to puzzle\
+```warpSuccess```: event ID to warp to on event success\
+```successMsg```: message to display on event success\
+```warpFail```: event ID to warp to on event fail\
+```failMsg```: message to display on event fail
