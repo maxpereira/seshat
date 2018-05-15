@@ -3,8 +3,8 @@
 # Seshat Adventure Engine
 The Seshat Adventure Engine is a text adventure engine written in vanilla JavaScript. It reads a JSON "storyfile" and allows you to play it in a classic "choose your own adventure" style.
 
-## Storyfile Format
-Storyfiles follow the JSON (JavaScript Object Notation) format. The data structure for the Storyfiles is constantly changing during development, so this documentation may be out of date.
+## Storyfiles
+Storyfiles are the way you program stories to play using Seshat. They follow the JSON (JavaScript Object Notation) format. **The data structure for the Storyfiles is constantly changing during development, so this documentation may be out of date.**
 
 ## Events
 Events are the different "rooms" or "areas" that the player can navigate through. Each event is its own unique key in the storyfile. In order for an event to be functional, it must contain the following:
