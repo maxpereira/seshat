@@ -76,8 +76,6 @@ Random Actions are a type of Special Event for when you want a user to have a cu
         "0": {
             "special": "random",
             "text": "Pry it open.",
-            "response": "",
-            "warp": "",
             "meta": "50",
             "warpSuccess": "2",
             "successMsg": "It's extremely hard to move. It probably hasn't been opened in years. With a great burst of effort, you slide the window open.",
