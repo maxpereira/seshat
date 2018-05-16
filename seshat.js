@@ -123,7 +123,7 @@ function lockedAction(num) {
     if (currentEvent.locked == currentAction.lockCount) {
         actionsContainer.innerHTML+=("<a href='#' onclick='lockedActionContinue("+num+");'>"+currentAction.text+"</a> (UNLOCKED)<br>");
     } else {
-        actionsContainer.innerHTML+=("<a href='#'>"+currentAction.text+"</a> (LOCKED)<br>");
+        actionsContainer.innerHTML+=("<a href='#' onclick='alert(\"This action is locked.\")'>"+currentAction.text+"</a> (LOCKED)<br>");
     }
 }
 
