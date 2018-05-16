@@ -40,8 +40,7 @@ A Quick Response Action will be created if the ```response``` key has a value.
     "actions": {
         "0": {
             "text": "Kick the door.",
-            "response": "It won't budge.",
-            "warp": ""
+            "response": "It won't budge."
         }
     }
 ```
@@ -54,7 +53,6 @@ Warp Actions are for when you want to move a player to another Event upon clicki
     "actions": {
         "0": {     
             "text": "Go inside.",
-            "response": "",
             "warp": "2"
         }
     }

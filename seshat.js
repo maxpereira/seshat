@@ -72,13 +72,17 @@ function processEvent() {
         currentAction = currentEvent.actions[curA];
         if (currentAction.special == "random") { // If special random event
             actionsContainer.innerHTML+=("<a href='#' onclick='randomAction("+curA+");'>"+currentAction.text+"</a><br>");
+        } else if (currentAction.special == "key") {
+            actionsContainer.innerHTML+=("<a href='#' onclick='keyActionContinue("+curA+");'>"+currentAction.text+"</a> (KEY)<br>");
+        } else if (currentAction.special == "locked") {
+            lockedAction(curA);
         } else if (currentAction.special == "puzzle") {
             actionsContainer.innerHTML+=("<a href='#' onclick='puzzleAction("+curA+");'>"+currentAction.text+"</a><br>");
-        } else if (currentAction.response != "" && currentAction.warp != "") { // If double event
+        } else if (currentAction.response != null && currentAction.warp != null) { // If double event
             actionsContainer.innerHTML+=("<a href='#' onclick='quickResponseWarp("+curA+","+currentAction.warp+");'>"+currentAction.text+"</a><br>");
-        } else if (currentAction.response != "") { // If quick respond event
+        } else if (currentAction.response != null) { // If quick respond event
             actionsContainer.innerHTML+=("<a href='#' onclick='quickResponse("+curA+");'>"+currentAction.text+"</a><br>");
-        } else if (currentAction.warp != "") { // If warp event
+        } else if (currentAction.warp != null) { // If warp event
             actionsContainer.innerHTML+=("<a href='#' onclick='warp("+currentAction.warp+");'>"+currentAction.text+"</a><br>");
         }
     }
@@ -100,7 +104,7 @@ function randomAction(num) {
     currentAction = currentEvent.actions[num];
     successMsg = currentAction.successMsg;
     failMsg = currentAction.failMsg;
-    thresh = currentAction.rngSuccessRate;
+    thresh = currentAction.meta;
     randomNumber = Math.floor(Math.random() * 101);
     if (randomNumber <= thresh) {
         alert(successMsg);
@@ -108,6 +112,47 @@ function randomAction(num) {
     } else {
         alert(failMsg);
         warp(currentAction.warpFail);
+    }
+}
+
+// Handlers for locked actions
+
+// Render locked actions
+function lockedAction(num) {
+    currentAction = currentEvent.actions[num];
+    if (currentEvent.locked == currentAction.lockCount) {
+        actionsContainer.innerHTML+=("<a href='#' onclick='lockedActionContinue("+num+");'>"+currentAction.text+"</a> (UNLOCKED)<br>");
+    } else {
+        actionsContainer.innerHTML+=("<a href='#'>"+currentAction.text+" (LOCKED)</a><br>");
+    }
+}
+
+// Handles when an unlocked locked action is clicked
+function lockedActionContinue(num) {
+    currentAction = currentEvent.actions[num];
+    if (currentAction.response != null && currentAction.warp != null) { // If double event
+        quickResponseWarp(num);
+    } else if (currentAction.response != null) { // If quick respond event
+        quickResponse(num);
+    } else if (currentAction.warp != null) { // If warp event
+        warp(currentAction.warp);
+    }
+}
+
+// Actually unlock (when clicking a key action)
+function keyActionContinue(num) {
+    currentAction = currentEvent.actions[num];
+    targetEvent = currentAction.targetEvent;
+    if (s.events[targetEvent].locked == "0") {
+        if (currentAction.obtained == "0") {
+            currentAction.obtained = "1";
+            s.events[targetEvent].locked = "1";
+            quickResponse(num);
+        } else {
+            alert("You've already used this key.");
+        }
+    } else {
+        alert("You've already used this key.");
     }
 }
 

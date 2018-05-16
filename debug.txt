@@ -6,27 +6,20 @@ let storytext = `
     "description": "This is a demo story to highlight the Seshat Engine.",
     "events": {
         "0": {
-            "type": "1",
             "image": "https://goo.gl/QyR8oy",
             "header": "The Porch",
             "description": "You come upon an abandoned house with a locked front door.",
             "actions": {
-                "0": {
-                    "special": "",     
+                "0": {  
                     "text": "Kick the door.",
-                    "response": "It won't budge.",
-                    "warp": ""
+                    "response": "It won't budge."
                 },
-                "1": {
-                    "special": "",                      
+                "1": {                 
                     "text": "Look for another way in.",
-                    "response": "",
                     "warp": "1"
                 },
-                "2": {
-                    "special": "",                      
+                "2": {                 
                     "text": "debug warp",
-                    "response": "",
                     "warp": "99"
                 },
                 "3": {
@@ -42,7 +35,6 @@ let storytext = `
             }
         },
         "1": {
-            "type": "1",
             "image": "https://goo.gl/m6rXKs",
             "header": "Looking around",
             "description": "You find a window that's slightly ajar- but it's on the second floor.",
@@ -50,50 +42,38 @@ let storytext = `
                 "0": {
                     "special": "random",
                     "text": "Pry it open.",
-                    "response": "",
-                    "warp": "",
                     "meta": "50",
                     "warpSuccess": "2",
                     "successMsg": "It's extremely hard to move. It probably hasn't been opened in years. With a great burst of effort, you slide the window open.",
                     "warpFail": "0",
                     "failMsg": "It's extremely hard to move. It probably hasn't been opened in years. Unfortunately it appears the wood has rotted to the point that this window won't be opening any time soon."
                 },
-                "1": {
-                    "special": "",                    
+                "1": {              
                     "text": "Break the glass.",
                     "response": "You wrap your shirt around your hand and punch through the glass, shattering it easily.",
                     "warp": "2"
                 },
-                "2": {
-                    "special": "",                    
+                "2": {              
                     "text": "Walk back to the porch.",
-                    "response": "",
                     "warp": "0"
                 }
             }
         },
         "2": {
-            "type": "1",
             "image": "",
             "header": "Front Room",
             "description": "After entering, you arrive in a dusty dank ornate room. Based on the furniture it looks like nobody has been here for many years. Suddenly, a loud noise of breaking glass pierces the air.",
             "actions": {
                 "0": {
-                    "special": "",
                     "text": "Climb the stairs to check it out.",
-                    "response": "You shamble towards the stairs, and climb them quickly.",
-                    "warp": ""
+                    "response": "You shamble towards the stairs, and climb them quickly."
                 },
                 "1": {
-                    "special": "",
                     "text": "Look around some more.",
-                    "response": "You notice an iron poker near the fireplace and grab it. Now that you can properly defend yourself, you go up the stairs.",
-                    "warp": ""
+                    "response": "You notice an iron poker near the fireplace and grab it. Now that you can properly defend yourself, you go up the stairs."
                 },
                 "2": {
-                    "special": "",
                     "text": "Climb back out the window and run away.",
-                    "response": "",
                     "warp": "1"
                 }
             }
@@ -107,8 +87,6 @@ let storytext = `
                 "0": {
                     "special": "random",
                     "text": "RANDOM ACTION.",
-                    "response": "",
-                    "warp": "",
                     "meta": "50",
                     "warpSuccess": "99",
                     "successMsg": "RNG SUCCEEDED",
@@ -117,17 +95,14 @@ let storytext = `
                 },
                 "1": {
                     "text": "room 0 (beginning)",
-                    "response": "",
                     "warp": "0"
                 },
                 "2": {
                     "text": "room 1",
-                    "response": "",
                     "warp": "1"
                 },
                 "3": {
                     "text": "room 2",
-                    "response": "",
                     "warp": "2"
                 },
                 "4": {
