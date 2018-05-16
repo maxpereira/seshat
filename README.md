@@ -11,7 +11,7 @@ Events are the different "rooms" or "areas" that the player can navigate through
 ```JSON
     "events": {
         "0": {
-            "image": "[Link to image (400x200)]",
+            "image": "https://i.imgur.com/KLpd2I2.png",
             "header": "Porch",
             "description": "You come upon an abandoned house with a locked front door.",
             "actions": {
@@ -25,7 +25,7 @@ Events are the different "rooms" or "areas" that the player can navigate through
         }
     }
 ```
-```image```: contains a link to the header image you want to use for that event  
+```image```: contains a link to the header image you want to use for that event (will be resized to 400x200)
 ```header```: title of event, usually used for displaying the name of a room or area  
 ```description```: a little blurb that describes the room or area  
 ```actions```: a list of actions the user can take during this event (see Actions below)  
@@ -34,8 +34,7 @@ Events are the different "rooms" or "areas" that the player can navigate through
 Actions are the different choices players can take during events. There are several types of Actions that have different outcomes.
 
 ### Quick Response
-Quick Response Actions display a message to the player. These can be used in conjunction with Warp Actions.\
-A Quick Response Action will be created if the ```response``` key has a value.
+Quick Response Actions display a message to the player. You can also add a ```warp``` tag.
 ```JSON
     "actions": {
         "0": {
@@ -48,7 +47,7 @@ A Quick Response Action will be created if the ```response``` key has a value.
 ```response```: message to display on click
 
 ### Warp
-Warp Actions are for when you want to move a player to another Event upon clicking an outcome. These can be used in conjunction with a Quick Response Action.\
+Warp Actions are for when you want to move a player to another Event upon clicking an outcome. You can also add a ```response``` tag.
 ```JSON
     "actions": {
         "0": {     
@@ -56,8 +55,7 @@ Warp Actions are for when you want to move a player to another Event upon clicki
             "warp": "2"
         }
     }
-```    
-```special```: not set\
+```
 ```text```: option message to display\
 ```warp```: event ID to warp to
 
