@@ -18,11 +18,7 @@ let storytext = `
                     "text": "Look for another way in.",
                     "warp": "1"
                 },
-                "2": {                 
-                    "text": "debug warp",
-                    "warp": "99"
-                },
-                "3": {
+                "2": {
                     "special": "puzzle",                      
                     "text": "Answer the puzzle",
                     "response": "What goes up when the rain comes down? (all lowercase, one word)",
