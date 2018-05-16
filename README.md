@@ -107,10 +107,10 @@ Puzzle Actions are a type of Special Event for when you want a user to have to e
 ```warpFail```: event ID to warp to on event fail\
 ```failMsg```: message to display on event fail
 
-## Locked Actions & Key Actions
+### Locked Actions & Key Actions
 These two special actions are used in conjunction with one another. Locked Actions require clicking a Key Action on another event to unlock them. For example, to open a door in one room you may need to find a key in another room.
 
-### Locked Action
+#### Locked Action
 ```JSON
     "actions": {
         "0": {
@@ -128,7 +128,7 @@ These two special actions are used in conjunction with one another. Locked Actio
 ```response```: message to display when the Unlocked Action is clicked\
 ```warp```: event ID to warp to when the Unlocked Action is clicked
 
-### Key Action
+#### Key Action
 ```JSON
     "actions": {
         "0": {
