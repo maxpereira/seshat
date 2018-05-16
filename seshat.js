@@ -123,7 +123,7 @@ function lockedAction(num) {
     if (currentEvent.locked == currentAction.lockCount) {
         actionsContainer.innerHTML+=("<a href='#' onclick='lockedActionContinue("+num+");'>"+currentAction.text+"</a> (UNLOCKED)<br>");
     } else {
-        actionsContainer.innerHTML+=("<a href='#'>"+currentAction.text+" (LOCKED)</a><br>");
+        actionsContainer.innerHTML+=("<a href='#'>"+currentAction.text+"</a> (LOCKED)<br>");
     }
 }
 
@@ -149,10 +149,10 @@ function keyActionContinue(num) {
             s.events[targetEvent].locked = "1";
             quickResponse(num);
         } else {
-            alert("You've already used this key.");
+            alert("You've already obtained this key.");
         }
     } else {
-        alert("You've already used this key.");
+        alert("You've already obtained this key.");
     }
 }
 
