@@ -106,3 +106,44 @@ Puzzle Actions are a type of Special Event for when you want a user to have to e
 ```successMsg```: message to display on event success\
 ```warpFail```: event ID to warp to on event fail\
 ```failMsg```: message to display on event fail
+
+## Locked Actions & Key Actions
+These two special actions are used in conjunction with one another. Locked Actions require clicking a Key Action on another event to unlock them. For example, to open a door in one room you may need to find a key in another room.
+
+### Locked Action
+```JSON
+    "actions": {
+        "0": {
+            "special": "locked",
+            "lockCount": "1",
+            "text": "Open the front door.",
+            "response": "You insert the key into the door and twist. It pops open.",
+            "warp": "3"
+        }
+    }
+```
+```special```: must be set to "locked"\
+```lockCount```: how many Key Actions must be applied to this action to unlock it\
+```text```: option message to display\
+```response```: message to display when the Unlocked Action is clicked\
+```warp```: event ID to warp to when the Unlocked Action is clicked
+
+### Key Action
+```JSON
+    "actions": {
+        "0": {
+            "special": "key",
+            "keyValue": "1",
+            "text": "Pick up key.",
+            "response": "You picked up a key. It is labelled 'TOTALLY NOT FOR THE FRONT DOOR'",
+            "targetEvent": "0",
+            "obtained": "0",
+        }
+    }
+```
+```special```: must be set to "key"\
+```keyValue```: how many 'points' this Key Action counts for\
+```text```: option message to display\
+```response```: message to display when the Key Action is clicked\
+```targetEvent```: event ID to apply the Key Action to\
+```obtained```: must be set to "0" (this is changed programatically)
