@@ -149,10 +149,10 @@ function keyActionContinue(num) {
             s.events[targetEvent].locked = "1";
             quickResponse(num);
         } else {
-            alert("You've already obtained this key.");
+            alert("You've already used this action.");
         }
     } else {
-        alert("You've already obtained this key.");
+        alert("You've already used this action.");
     }
 }
 

@@ -56,6 +56,15 @@ let storytext = `
                 "2": {              
                     "text": "Walk back to the porch.",
                     "warp": "0"
+                },
+                "3": {
+                    "special": "key",
+                    "keyValue": "1",
+                    "targetEvent": "0",
+                    "obtained": "0",
+                    "text": "Pick up key.",
+                    "response": "You picked up a key. It is labelled 'TOTALLY NOT FOR THE FRONT DOOR'",
+                    "warp": ""
                 }
             }
         },
@@ -73,7 +82,7 @@ let storytext = `
                     "response": "You notice an iron poker near the fireplace and grab it. Now that you can properly defend yourself, you go up the stairs."
                 },
                 "2": {
-                    "text": "Climb back out the window and run away.",
+                    "text": "Climb out the window and run away.",
                     "warp": "1"
                 }
             }
