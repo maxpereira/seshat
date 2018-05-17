@@ -70,25 +70,28 @@ function processEvent() {
     // Render actions onto page
     for (curA = 0; curA < Object.keys(currentEvent.actions).length; curA++) { 
         currentAction = currentEvent.actions[curA];
-        if (currentAction.special == "random") { // If special random event
+        if (currentAction.special == "random") { // If special random action
             actionsContainer.innerHTML+=("<a href='#' onclick='randomAction("+curA+");'>"+currentAction.text+"</a><br>");
-        } else if (currentAction.special == "key") {
-            actionsContainer.innerHTML+=("<a href='#' onclick='keyActionContinue("+curA+");'>"+currentAction.text+"</a> (KEY)<br>");
+        } else if (currentAction.special == "key") { // If key action
+            // Only render key actions if player hasn't obtained it yet
+            if (currentAction.obtained == "0") {
+                actionsContainer.innerHTML+=("<a href='#' onclick='keyActionContinue("+curA+");'>"+currentAction.text+"</a> (KEY)<br>");
+            }
         } else if (currentAction.special == "locked") {
             lockedAction(curA);
         } else if (currentAction.special == "puzzle") {
             actionsContainer.innerHTML+=("<a href='#' onclick='puzzleAction("+curA+");'>"+currentAction.text+"</a><br>");
-        } else if (currentAction.response != null && currentAction.warp != null) { // If double event
+        } else if (currentAction.response != null && currentAction.warp != null) { // If double action
             actionsContainer.innerHTML+=("<a href='#' onclick='quickResponseWarp("+curA+","+currentAction.warp+");'>"+currentAction.text+"</a><br>");
-        } else if (currentAction.response != null) { // If quick respond event
+        } else if (currentAction.response != null) { // If quick respond action
             actionsContainer.innerHTML+=("<a href='#' onclick='quickResponse("+curA+");'>"+currentAction.text+"</a><br>");
-        } else if (currentAction.warp != null) { // If warp event
+        } else if (currentAction.warp != null) { // If warp action
             actionsContainer.innerHTML+=("<a href='#' onclick='warp("+currentAction.warp+");'>"+currentAction.text+"</a><br>");
         }
     }
 }
 
-// Handler for QR + warp events
+// Handler for QR + warp actions
 function quickResponseWarp(num) {
     quickResponse(num);
     warp(currentEvent.actions[num].warp);
