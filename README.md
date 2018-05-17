@@ -11,6 +11,7 @@ Events are the different "rooms" or "areas" that the player can navigate through
 ```JSON
     "events": {
         "0": {
+            "locked": "0",
             "image": "https://i.imgur.com/KLpd2I2.png",
             "header": "Porch",
             "description": "You come upon an abandoned house with a locked front door.",
@@ -25,6 +26,7 @@ Events are the different "rooms" or "areas" that the player can navigate through
         }
     }
 ```
+```locked```: only necessary if you want to have a locked action for this event (if you do, set to 0)
 ```image```: contains a link to the header image you want to use for that event (will be resized to 400x200)
 ```header```: title of event, usually used for displaying the name of a room or area  
 ```description```: a little blurb that describes the room or area  

@@ -6,13 +6,17 @@ let storytext = `
     "description": "This is a demo story to highlight the Seshat Engine.",
     "events": {
         "0": {
+            "locked": "0",
             "image": "https://goo.gl/QyR8oy",
             "header": "The Porch",
             "description": "You come upon an abandoned house with a locked front door.",
             "actions": {
-                "0": {  
-                    "text": "Kick the door.",
-                    "response": "It won't budge."
+                "0": {
+                    "special": "locked",
+                    "lockCount": "1",
+                    "text": "Open the front door.",
+                    "response": "You insert the key into the door and twist. It pops open.",
+                    "warp": "2"
                 },
                 "1": {                 
                     "text": "Look for another way in.",
